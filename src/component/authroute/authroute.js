@@ -12,7 +12,7 @@ import {loadData} from '../../redux/user.redux'
 class AuthRoute extends React.Component {
     componentDidMount() {
         axios.get('/user/info').then(res => {
-            if (res.status == 200) {
+            if (res.status === 200) {
                 this.props.loadData(res.data.data)
             } else {
                 this.props.history.push('/login')
